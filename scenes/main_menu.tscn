@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dtgguq21627h4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vue75"]
+font_size = 80
+font_color = Color(0.9882353, 0.7882353, 0.023529412, 1)
+
+[node name="Main Menu" type="Control" unique_id=1050506657]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="." unique_id=878816295]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11372549, 0.25490198, 0.5294118, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=254939321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=936683287]
+layout_mode = 2
+size_flags_vertical = 6
+text = "LIFT TRIVIA"
+label_settings = SubResource("LabelSettings_vue75")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=908188595]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 2
+alignment = 1
+
+[node name="Host" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=317142453]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+tooltip_text = "Create a room for others to join"
+theme_override_font_sizes/font_size = 32
+text = "Host
+"
+
+[node name="Join" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=679506464]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+tooltip_text = "Join a room being hosted"
+theme_override_font_sizes/font_size = 32
+text = "Join
+"
