@@ -1,13 +1,9 @@
 [gd_scene format=3 uid="uid://bk2f2a5prt4rs"]
 
-[ext_resource type="Script" uid="uid://d020fk5r70xad" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dtgguq21627h4" path="res://scenes/main_menu.tscn" id="1_o5qli"]
 
 [node name="Main" type="Node" unique_id=1377012116]
-script = ExtResource("1_0wfyh")
 
 [node name="Current Scene" type="Node" parent="." unique_id=703447064]
 
 [node name="Main Menu" parent="Current Scene" unique_id=1050506657 instance=ExtResource("1_o5qli")]
-
-[connection signal="requested_room_creation" from="Current Scene/Main Menu" to="." method="_on_requested_room_creation"]
