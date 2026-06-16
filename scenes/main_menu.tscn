@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dtgguq21627h4"]
 
+[ext_resource type="Script" uid="uid://wljlfn5fohr" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_vue75"]
 font_size = 80
 font_color = Color(0.9882353, 0.7882353, 0.023529412, 1)
@@ -11,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l6cm7")
 
 [node name="Background" type="ColorRect" parent="." unique_id=878816295]
 layout_mode = 1
@@ -59,3 +62,5 @@ tooltip_text = "Join a room being hosted"
 theme_override_font_sizes/font_size = 32
 text = "Join
 "
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Host" to="." method="_on_host_pressed"]

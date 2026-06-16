@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Lift Trivia"
+run/main_scene="uid://bk2f2a5prt4rs"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*uid://dapen7o8pqu5f"
 
 [display]
 
