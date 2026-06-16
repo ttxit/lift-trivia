@@ -25,13 +25,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Back" type="Button" parent="VBoxContainer" unique_id=528350939]
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=283828285]
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 tooltip_text = "Go back to Main Menu"
-text = "Back"
+text = "Start"
 
 [node name="Options" type="Panel" parent="VBoxContainer" unique_id=1351887287]
 custom_minimum_size = Vector2(300, 350)
@@ -77,10 +77,10 @@ text = "Questions"
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=283828285]
+[node name="Back" type="Button" parent="VBoxContainer" unique_id=528350939]
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 tooltip_text = "Go back to Main Menu"
-text = "Start"
+text = "Back"
