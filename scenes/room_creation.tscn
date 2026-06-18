@@ -67,6 +67,9 @@ text = "Room Size"
 [node name="SpinBox" type="SpinBox" parent="VBoxContainer/Options/VBoxContainer/Player Count" unique_id=2063117187]
 layout_mode = 2
 size_flags_horizontal = 10
+min_value = 1.0
+value = 1.0
+rounded = true
 
 [node name="Question Count" type="HBoxContainer" parent="VBoxContainer/Options/VBoxContainer" unique_id=427178756]
 layout_mode = 2
@@ -79,6 +82,10 @@ text = "Questions"
 [node name="SpinBox" type="SpinBox" parent="VBoxContainer/Options/VBoxContainer/Question Count" unique_id=515346141]
 layout_mode = 2
 size_flags_horizontal = 10
+min_value = 1.0
+max_value = 50.0
+value = 1.0
+rounded = true
 
 [node name="Back" type="Button" parent="VBoxContainer" unique_id=528350939]
 custom_minimum_size = Vector2(100, 75)
