@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://dn1sfjejby6us"]
+
+[ext_resource type="Script" uid="uid://br4v65m5fypqj" path="res://scripts/player_join.gd" id="1_bx80g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cnoii"]
+font_size = 60
+font_color = Color(1, 0.84313726, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bx80g"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqhge"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_8fa8l"]
+font_size = 30
+
+[node name="PlayerJoin" type="Control" unique_id=650252440]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bx80g")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1995714954]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 1152.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11372549, 0.25490198, 0.5294118, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1586492069]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = 1153.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1205785261]
+layout_mode = 2
+text = "Join Game"
+label_settings = SubResource("LabelSettings_cnoii")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=510245736]
+layout_mode = 2
+
+[node name="room_code" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=535174629]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/room_code" unique_id=498157716]
+layout_mode = 2
+text = "Room Code: "
+label_settings = SubResource("LabelSettings_bx80g")
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/room_code" unique_id=1121664204]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+placeholder_text = "Enter code..."
+alignment = 1
+
+[node name="player_name" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=942835344]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/player_name" unique_id=410764375]
+layout_mode = 2
+text = "Name: "
+label_settings = SubResource("LabelSettings_bqhge")
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/player_name" unique_id=1123223390]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+placeholder_text = "Enter your name..."
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=1871768033]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2" unique_id=485971266]
+layout_mode = 2
+text = "Choose your avatar"
+label_settings = SubResource("LabelSettings_8fa8l")
+horizontal_alignment = 1
+
+[node name="Avatar List" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=1633911110]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=1352664580]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = " 🦍"
+
+[node name="Button2" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=15181419]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = " 🦄"
+
+[node name="Button3" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=2050226333]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = " 🐼"
+
+[node name="Button4" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=594089051]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = " 🐻"
+
+[node name="Button5" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=671532557]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "⛄ "
+
+[node name="Join" type="Button" parent="VBoxContainer" unique_id=1855407038]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+text = "Join"
+
+[node name="Leave" type="Button" parent="VBoxContainer" unique_id=195468055]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Leave"
+script = ExtResource("1_bx80g")
+
+[connection signal="pressed" from="VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="VBoxContainer/Leave" to="." method="_on_leave_pressed"]
