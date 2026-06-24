@@ -139,7 +139,7 @@ text = "Join"
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 30
 text = "Leave"
 
 [connection signal="pressed" from="VBoxContainer/Join" to="." method="_on_join_pressed"]
