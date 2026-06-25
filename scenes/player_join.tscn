@@ -132,6 +132,7 @@ text = "⛄ "
 custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
 size_flags_horizontal = 4
+tooltip_text = "Join session"
 theme_override_font_sizes/font_size = 36
 text = "Join"
 
@@ -139,6 +140,7 @@ text = "Join"
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_horizontal = 4
+tooltip_text = "Back to Main Menu"
 theme_override_font_sizes/font_size = 30
 text = "Leave"
 script = ExtResource("1_bx80g")

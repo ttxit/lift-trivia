@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bfqn6v3phfwee"]
+
+[ext_resource type="Script" uid="uid://uo8bnjr0hej8" path="res://scripts/player_waiting.gd" id="1_0py0l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rkp06"]
+font_size = 60
+font_color = Color(1, 0.84313726, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0py0l"]
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_uxch6"]
+font_size = 40
+
+[node name="PlayerWaiting" type="Control" unique_id=1884642348]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0py0l")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1554738565]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 1154.0
+offset_bottom = 651.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11372549, 0.25490198, 0.5294118, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=554268210]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 1149.0
+offset_bottom = 646.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 75
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1336770774]
+layout_mode = 2
+text = "Waiting for Host..."
+label_settings = SubResource("LabelSettings_rkp06")
+horizontal_alignment = 1
+
+[node name="AvatarDisplay" type="Label" parent="VBoxContainer" unique_id=94551615]
+layout_mode = 2
+text = "<Avatar>"
+label_settings = SubResource("LabelSettings_0py0l")
+horizontal_alignment = 1
+
+[node name="NameDisplay" type="Label" parent="VBoxContainer" unique_id=2055313371]
+layout_mode = 2
+text = "<Name>"
+label_settings = SubResource("LabelSettings_uxch6")
+horizontal_alignment = 1
+
+[node name="Leave" type="Button" parent="VBoxContainer" unique_id=252709774]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+tooltip_text = "Back to Main Menu"
+theme_override_font_sizes/font_size = 30
+text = "Leave"
+
+[connection signal="pressed" from="VBoxContainer/Leave" to="." method="_on_leave_pressed"]
