@@ -17,7 +17,11 @@ font_size = 30
 
 [node name="PlayerJoin" type="Control" unique_id=650252440]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_bx80g")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1995714954]
@@ -25,8 +29,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1152.0
-offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.11372549, 0.25490198, 0.5294118, 1)
@@ -36,8 +38,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1152.0
-offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
@@ -106,25 +106,25 @@ text = " 🦍"
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = " 🦄"
+text = "🦄"
 
 [node name="Button3" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=2050226333]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = " 🐼"
+text = "🐼"
 
 [node name="Button4" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=594089051]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = " 🐻"
+text = "🐻"
 
 [node name="Button5" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=671532557]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "⛄ "
+text = "⛄"
 
 [node name="Join" type="Button" parent="VBoxContainer" unique_id=1855407038]
 custom_minimum_size = Vector2(200, 70)
@@ -143,5 +143,10 @@ theme_override_font_sizes/font_size = 30
 text = "Leave"
 script = ExtResource("1_bx80g")
 
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button" to="." method="_on_avatar_selected" binds= [" 🦍"]]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button2" to="." method="_on_avatar_selected" binds= ["🦄"]]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button3" to="." method="_on_avatar_selected" binds= ["🐼"]]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button4" to="." method="_on_avatar_selected" binds= ["🐻"]]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button5" to="." method="_on_avatar_selected" binds= ["⛄"]]
 [connection signal="pressed" from="VBoxContainer/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="VBoxContainer/Leave" to="." method="_on_leave_pressed"]
