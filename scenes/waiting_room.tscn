@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://y2j27qsie0ur"]
 
+[ext_resource type="Script" uid="uid://c1qsrvkvidhnt" path="res://scripts/waiting_room.gd" id="1_0q7jc"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_rhuew"]
-font_size = 80
+font_size = 50
 font_color = Color(1, 0.84313726, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmves"]
@@ -37,6 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0q7jc")
 
 [node name="Background" type="ColorRect" parent="." unique_id=760871401]
 layout_mode = 1
@@ -59,17 +62,31 @@ theme_override_constants/separation = 40
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=171994901]
 layout_mode = 2
-text = "LIFT TRIVIA"
+size_flags_vertical = 6
+text = "[ROOM CODE]"
 label_settings = SubResource("LabelSettings_rhuew")
 horizontal_alignment = 1
 
-[node name="QR Code Box" type="Panel" parent="VBoxContainer" unique_id=1141391486]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2022032340]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Back" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=2140677668]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="QR Code Box" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1141391486]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_jmves")
 
-[node name="temp label" type="Label" parent="VBoxContainer/QR Code Box" unique_id=288910783]
+[node name="temp label" type="Label" parent="VBoxContainer/HBoxContainer/QR Code Box" unique_id=288910783]
 layout_mode = 0
 offset_left = -51.0
 offset_top = 85.0
@@ -79,10 +96,19 @@ text = "[QR CODE]"
 label_settings = SubResource("LabelSettings_1r6sg")
 horizontal_alignment = 1
 
+[node name="Start" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1492329230]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
 [node name="Player Box" type="Panel" parent="VBoxContainer" unique_id=1115863138]
 custom_minimum_size = Vector2(1000, 100)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Player Box" unique_id=1588497957]
 layout_mode = 1
@@ -130,3 +156,6 @@ size_flags_horizontal = 3
 text = " ⛄P5"
 label_settings = SubResource("LabelSettings_ksb6f")
 horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
