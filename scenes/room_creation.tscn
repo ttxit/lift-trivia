@@ -28,13 +28,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=283828285]
+[node name="Create" type="Button" parent="VBoxContainer" unique_id=283828285]
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 tooltip_text = "Go back to Main Menu"
-text = "Start"
+text = "Create"
 
 [node name="Options" type="Panel" parent="VBoxContainer" unique_id=1351887287]
 custom_minimum_size = Vector2(300, 350)
@@ -95,5 +95,5 @@ size_flags_vertical = 6
 tooltip_text = "Go back to Main Menu"
 text = "Back"
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Create" to="." method="_on_create_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
