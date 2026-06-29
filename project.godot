@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneManager="*uid://dapen7o8pqu5f"
+PlayerData="*uid://br3idmw5kv7gy"
 
 [display]
 
