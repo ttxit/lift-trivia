@@ -1,0 +1,242 @@
+[gd_scene format=3 uid="uid://ci0axi2cglusa"]
+
+[ext_resource type="Script" uid="uid://doictm6m3db6h" path="res://scripts/host_question.gd" id="1_o2wlt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swgos"]
+bg_color = Color(1, 0.84313726, 0, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_o2wlt"]
+font_size = 32
+font_color = Color(0.058823, 0.203921, 0.37647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kv0y"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_quyqm"]
+font_size = 28
+font_color = Color(0.905882, 0.298039, 0.235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6kso"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_5jehe"]
+font_size = 26
+font_color = Color(0.058823, 0.203921, 0.37647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvhi0"]
+bg_color = Color(0.905882, 0.298039, 0.235294, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qirym"]
+font_size = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74lvl"]
+bg_color = Color(0.30196, 0.588235, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_swgos"]
+font_size = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evhcm"]
+bg_color = Color(0.317647, 0.811764, 0.4, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kv0y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrc58"]
+bg_color = Color(1, 0.662745, 0.30196, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e6kso"]
+font_size = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jehe"]
+bg_color = Color(1, 1, 1, 0.15)
+
+[node name="HostQuestion" type="Control" unique_id=625290634]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o2wlt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=244937384]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.058823, 0.203921, 0.37647, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1072612346]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="top_row" type="HBoxContainer" parent="VBoxContainer" unique_id=1350985766]
+layout_mode = 2
+
+[node name="number_bubble" type="Panel" parent="VBoxContainer/top_row" unique_id=1579523159]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_swgos")
+
+[node name="question_number" type="Label" parent="VBoxContainer/top_row/number_bubble" unique_id=543089050]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1
+"
+label_settings = SubResource("LabelSettings_o2wlt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="space" type="Control" parent="VBoxContainer/top_row" unique_id=1371379918]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="timer_bubble" type="Panel" parent="VBoxContainer/top_row" unique_id=1500830021]
+custom_minimum_size = Vector2(140, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4kv0y")
+
+[node name="timer" type="Label" parent="VBoxContainer/top_row/timer_bubble" unique_id=2141069342]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "15
+"
+label_settings = SubResource("LabelSettings_quyqm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="question_bubble" type="Panel" parent="VBoxContainer" unique_id=817087547]
+custom_minimum_size = Vector2(900, 160)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_e6kso")
+
+[node name="question" type="Label" parent="VBoxContainer/question_bubble" unique_id=1315350484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Which book of the Bible contains the Sermon on the Mount?"
+label_settings = SubResource("LabelSettings_5jehe")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="answer_grid" type="GridContainer" parent="VBoxContainer" unique_id=1746743510]
+custom_minimum_size = Vector2(80, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="a1_bubble" type="Panel" parent="VBoxContainer/answer_grid" unique_id=2015308228]
+custom_minimum_size = Vector2(350, 110)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yvhi0")
+
+[node name="answer1" type="Label" parent="VBoxContainer/answer_grid/a1_bubble" unique_id=726560271]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Matthew
+"
+label_settings = SubResource("LabelSettings_qirym")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="a2_bubble" type="Panel" parent="VBoxContainer/answer_grid" unique_id=223764896]
+custom_minimum_size = Vector2(350, 110)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_74lvl")
+
+[node name="answer2" type="Label" parent="VBoxContainer/answer_grid/a2_bubble" unique_id=1453755101]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mark
+"
+label_settings = SubResource("LabelSettings_swgos")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="a3_bubble" type="Panel" parent="VBoxContainer/answer_grid" unique_id=1416101667]
+custom_minimum_size = Vector2(350, 110)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_evhcm")
+
+[node name="answer3" type="Label" parent="VBoxContainer/answer_grid/a3_bubble" unique_id=1628350975]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Luke"
+label_settings = SubResource("LabelSettings_4kv0y")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="a4_bubble" type="Panel" parent="VBoxContainer/answer_grid" unique_id=1869236845]
+custom_minimum_size = Vector2(350, 110)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qrc58")
+
+[node name="answer4" type="Label" parent="VBoxContainer/answer_grid/a4_bubble" unique_id=1165622499]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "John
+"
+label_settings = SubResource("LabelSettings_e6kso")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="end_button" type="Button" parent="VBoxContainer" unique_id=1496863897]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_5jehe")
+text = "End Game"
+
+[connection signal="pressed" from="VBoxContainer/end_button" to="." method="_on_end_pressed"]

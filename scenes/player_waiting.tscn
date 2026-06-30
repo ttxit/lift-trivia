@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0py0l")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1554738565]
+[node name="background" type="ColorRect" parent="." unique_id=1554738565]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,25 +39,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 75
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1336770774]
+[node name="title" type="Label" parent="VBoxContainer" unique_id=1336770774]
 layout_mode = 2
 text = "Waiting for Host..."
 label_settings = SubResource("LabelSettings_rkp06")
 horizontal_alignment = 1
 
-[node name="AvatarDisplay" type="Label" parent="VBoxContainer" unique_id=644558735]
+[node name="avatar_display" type="Label" parent="VBoxContainer" unique_id=644558735]
 layout_mode = 2
 text = "[Avatar]"
 label_settings = SubResource("LabelSettings_0py0l")
 horizontal_alignment = 1
 
-[node name="NameDisplay" type="Label" parent="VBoxContainer" unique_id=194562140]
+[node name="name_display" type="Label" parent="VBoxContainer" unique_id=194562140]
 layout_mode = 2
 text = "[Name]"
 label_settings = SubResource("LabelSettings_uxch6")
 horizontal_alignment = 1
 
-[node name="Leave" type="Button" parent="VBoxContainer" unique_id=252709774]
+[node name="leave_button" type="Button" parent="VBoxContainer" unique_id=252709774]
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -65,4 +65,4 @@ tooltip_text = "Back to Main Menu"
 theme_override_font_sizes/font_size = 30
 text = "Leave"
 
-[connection signal="pressed" from="VBoxContainer/Leave" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="VBoxContainer/leave_button" to="." method="_on_leave_pressed"]
