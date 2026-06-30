@@ -35,24 +35,24 @@ corner_radius_bottom_left = 28
 font_size = 26
 font_color = Color(0.058823, 0.203921, 0.37647, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvhi0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdd2x"]
 bg_color = Color(0.905882, 0.298039, 0.235294, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qirym"]
 font_size = 18
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74lvl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kw382"]
 bg_color = Color(0.30196, 0.588235, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_swgos"]
 font_size = 18
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evhcm"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4ncq"]
 bg_color = Color(0.317647, 0.811764, 0.4, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4kv0y"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrc58"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyoc8"]
 bg_color = Color(1, 0.662745, 0.30196, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_e6kso"]
@@ -159,10 +159,10 @@ theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 2
 
-[node name="a1_bubble" type="Panel" parent="VBoxContainer/answer_grid" unique_id=2015308228]
+[node name="a1_bubble" type="Button" parent="VBoxContainer/answer_grid" unique_id=1723042126]
 custom_minimum_size = Vector2(350, 110)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_yvhi0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qdd2x")
 
 [node name="answer1" type="Label" parent="VBoxContainer/answer_grid/a1_bubble" unique_id=726560271]
 layout_mode = 1
@@ -177,10 +177,10 @@ label_settings = SubResource("LabelSettings_qirym")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="a2_bubble" type="Panel" parent="VBoxContainer/answer_grid" unique_id=223764896]
+[node name="a2_bubble" type="Button" parent="VBoxContainer/answer_grid" unique_id=1767436286]
 custom_minimum_size = Vector2(350, 110)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_74lvl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kw382")
 
 [node name="answer2" type="Label" parent="VBoxContainer/answer_grid/a2_bubble" unique_id=1453755101]
 layout_mode = 1
@@ -195,10 +195,10 @@ label_settings = SubResource("LabelSettings_swgos")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="a3_bubble" type="Panel" parent="VBoxContainer/answer_grid" unique_id=1416101667]
+[node name="a3_bubble" type="Button" parent="VBoxContainer/answer_grid" unique_id=531675091]
 custom_minimum_size = Vector2(350, 110)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_evhcm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t4ncq")
 
 [node name="answer3" type="Label" parent="VBoxContainer/answer_grid/a3_bubble" unique_id=1628350975]
 layout_mode = 1
@@ -212,10 +212,10 @@ label_settings = SubResource("LabelSettings_4kv0y")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="a4_bubble" type="Panel" parent="VBoxContainer/answer_grid" unique_id=1869236845]
+[node name="a4_bubble" type="Button" parent="VBoxContainer/answer_grid" unique_id=1325562477]
 custom_minimum_size = Vector2(350, 110)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qrc58")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yyoc8")
 
 [node name="answer4" type="Label" parent="VBoxContainer/answer_grid/a4_bubble" unique_id=1165622499]
 layout_mode = 1
