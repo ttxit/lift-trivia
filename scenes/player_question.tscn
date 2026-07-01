@@ -9,8 +9,8 @@ corner_radius_top_right = 40
 corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
 
-[sub_resource type="LabelSettings" id="LabelSettings_o2wlt"]
-font_size = 32
+[sub_resource type="LabelSettings" id="LabelSettings_qdd2x"]
+font_size = 28
 font_color = Color(0.058823, 0.203921, 0.37647, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kv0y"]
@@ -20,9 +20,7 @@ corner_radius_top_right = 35
 corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
 
-[sub_resource type="LabelSettings" id="LabelSettings_quyqm"]
-font_size = 28
-font_color = Color(0.905882, 0.298039, 0.235294, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_kw382"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6kso"]
 bg_color = Color(1, 1, 1, 1)
@@ -90,6 +88,8 @@ theme_override_constants/separation = 25
 
 [node name="top_row" type="HBoxContainer" parent="VBoxContainer" unique_id=1350985766]
 layout_mode = 2
+theme_override_constants/separation = 850
+alignment = 1
 
 [node name="number_bubble" type="Panel" parent="VBoxContainer/top_row" unique_id=1579523159]
 custom_minimum_size = Vector2(80, 80)
@@ -98,36 +98,32 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_swgos")
 
-[node name="question_number" type="Label" parent="VBoxContainer/top_row/number_bubble" unique_id=543089050]
+[node name="Label" type="Label" parent="VBoxContainer/top_row/number_bubble" unique_id=1816695518]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "1
-"
-label_settings = SubResource("LabelSettings_o2wlt")
+text = "1"
+label_settings = SubResource("LabelSettings_qdd2x")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="space" type="Control" parent="VBoxContainer/top_row" unique_id=1371379918]
-layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="avatar_display" type="Panel" parent="VBoxContainer/top_row" unique_id=1500830021]
 custom_minimum_size = Vector2(140, 70)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4kv0y")
 
-[node name="avatar" type="Label" parent="VBoxContainer/top_row/avatar_display" unique_id=2141069342]
+[node name="Label" type="Label" parent="VBoxContainer/top_row/avatar_display" unique_id=1399538946]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-label_settings = SubResource("LabelSettings_quyqm")
+text = "[Avatar]"
+label_settings = SubResource("LabelSettings_kw382")
 horizontal_alignment = 1
 vertical_alignment = 1
 
