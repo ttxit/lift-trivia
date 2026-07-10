@@ -6,13 +6,18 @@ func _on_join_pressed() -> void:
 	var room_code = $VBoxContainer/VBoxContainer/room_code/LineEdit.text.strip_edges()
 	var player_name = $VBoxContainer/VBoxContainer/player_name/LineEdit.text.strip_edges()
 
-	# for class implementation, replace lines 13-15 with:
-	# PlayerData.create_player(player_name, selected_avatar)
-	# PlayerData.room_code = room_code
+	if room_code == "":
+		print("Please enter a room code")
+		return	
+	if player_name == "":
+		print("Please enter your name")
+		return
+	if selected_avatar == "":
+		print("Please select an avatar")
+		return
 
-	PlayerData.player_name = player_name
-	PlayerData.avatar = selected_avatar
 	PlayerData.room_code = room_code
+	PlayerData.create_player(player_name, selected_avatar)
 
 	SceneManager.change_view("res://scenes/player_waiting.tscn")
 

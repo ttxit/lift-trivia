@@ -42,42 +42,42 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1205785261]
+[node name="title" type="Label" parent="VBoxContainer" unique_id=1205785261]
 layout_mode = 2
 text = "Join Game"
 label_settings = SubResource("LabelSettings_cnoii")
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=510245736]
+[node name="input_data" type="VBoxContainer" parent="VBoxContainer" unique_id=510245736]
 layout_mode = 2
 
-[node name="room_code" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=535174629]
+[node name="room_code" type="HBoxContainer" parent="VBoxContainer/input_data" unique_id=535174629]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/room_code" unique_id=498157716]
+[node name="Label" type="Label" parent="VBoxContainer/input_data/room_code" unique_id=498157716]
 layout_mode = 2
 text = "Room Code: "
 label_settings = SubResource("LabelSettings_bx80g")
 horizontal_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/room_code" unique_id=1121664204]
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/input_data/room_code" unique_id=1121664204]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 placeholder_text = "Enter code..."
 alignment = 1
 
-[node name="player_name" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=942835344]
+[node name="player_name" type="HBoxContainer" parent="VBoxContainer/input_data" unique_id=942835344]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/player_name" unique_id=410764375]
+[node name="Label" type="Label" parent="VBoxContainer/input_data/player_name" unique_id=410764375]
 layout_mode = 2
 text = "Name: "
 label_settings = SubResource("LabelSettings_bqhge")
 horizontal_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/player_name" unique_id=1123223390]
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/input_data/player_name" unique_id=1123223390]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 placeholder_text = "Enter your name..."

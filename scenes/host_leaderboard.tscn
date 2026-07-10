@@ -1,0 +1,375 @@
+[gd_scene format=3 uid="uid://bsbusc1xrj68u"]
+
+[ext_resource type="Script" uid="uid://dwwr1ud1ojmqc" path="res://scripts/host_leaderboard.gd" id="1_c4np3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u81bk"]
+font_size = 52
+font_color = Color(1, 0.84313726, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u81bk"]
+bg_color = Color(1, 0.84313726, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c4np3"]
+font_color = Color(0, 0, 0, 0.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pp4h7"]
+font_color = Color(0, 0, 0, 0.75)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7nvtw"]
+font_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_43c0x"]
+font_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5kbis"]
+bg_color = Color(0.753, 0.753, 0.753, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_btfvf"]
+font_color = Color(0, 0, 0, 0.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_juer2"]
+font_color = Color(0, 0, 0, 0.75)
+
+[sub_resource type="LabelSettings" id="LabelSettings_77fnu"]
+font_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vt7xt"]
+font_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ycce"]
+bg_color = Color(0.804, 0.498, 0.196, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hopkj"]
+font_color = Color(0, 0, 0, 0.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y32x3"]
+font_color = Color(0, 0, 0, 0.75)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tqkmk"]
+font_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rivrk"]
+font_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nf8sg"]
+bg_color = Color(0.30196, 0.588235, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fh6xx"]
+font_color = Color(0, 0, 0, 0.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t5m74"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kynmb"]
+font_color = Color(0, 0, 0, 0.75)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4r2sq"]
+font_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2h0rg"]
+font_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3s83"]
+bg_color = Color(0.8869322, 0.8673485, 0.8616555, 0.33400002)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f5vho"]
+font_color = Color(0.9297146, 0.9297147, 0.9297146, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnti4"]
+bg_color = Color(0.8869322, 0.8673485, 0.8616555, 0.33400002)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c2lvt"]
+font_color = Color(0.9297146, 0.9297147, 0.9297146, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tj4x"]
+bg_color = Color(0.887035, 0.86716837, 0.86183965, 0.15200001)
+
+[node name="HostLeaderboard" type="Control" unique_id=1433479937]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c4np3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1593000290]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.058823, 0.203921, 0.37647, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=198165690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+
+[node name="title" type="Label" parent="VBoxContainer" unique_id=940645249]
+layout_mode = 2
+text = "Leaderboard"
+label_settings = SubResource("LabelSettings_u81bk")
+horizontal_alignment = 1
+
+[node name="top4" type="GridContainer" parent="VBoxContainer" unique_id=1625711190]
+layout_mode = 2
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="first" type="Panel" parent="VBoxContainer/top4" unique_id=416348090]
+custom_minimum_size = Vector2(450, 130)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_u81bk")
+
+[node name="first_vbox" type="VBoxContainer" parent="VBoxContainer/top4/first" unique_id=1910005946]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="position" type="Label" parent="VBoxContainer/top4/first/first_vbox" unique_id=1634535986]
+layout_mode = 2
+text = "1st"
+label_settings = SubResource("LabelSettings_c4np3")
+horizontal_alignment = 1
+
+[node name="avatar" type="Label" parent="VBoxContainer/top4/first/first_vbox" unique_id=316101442]
+layout_mode = 2
+text = "[avatar]"
+horizontal_alignment = 1
+
+[node name="name" type="Label" parent="VBoxContainer/top4/first/first_vbox" unique_id=1376538886]
+layout_mode = 2
+text = "Player"
+label_settings = SubResource("LabelSettings_pp4h7")
+horizontal_alignment = 1
+
+[node name="points_count" type="Label" parent="VBoxContainer/top4/first/first_vbox" unique_id=705022838]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_7nvtw")
+horizontal_alignment = 1
+
+[node name="pts_string" type="Label" parent="VBoxContainer/top4/first/first_vbox" unique_id=1672419535]
+layout_mode = 2
+text = "pts"
+label_settings = SubResource("LabelSettings_43c0x")
+horizontal_alignment = 1
+
+[node name="second" type="Panel" parent="VBoxContainer/top4" unique_id=1676289125]
+custom_minimum_size = Vector2(450, 130)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_5kbis")
+
+[node name="second_vbox" type="VBoxContainer" parent="VBoxContainer/top4/second" unique_id=1527161377]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="position" type="Label" parent="VBoxContainer/top4/second/second_vbox" unique_id=1246013584]
+layout_mode = 2
+text = "2nd"
+label_settings = SubResource("LabelSettings_btfvf")
+horizontal_alignment = 1
+
+[node name="avatar" type="Label" parent="VBoxContainer/top4/second/second_vbox" unique_id=2128829415]
+layout_mode = 2
+text = "[avatar]"
+horizontal_alignment = 1
+
+[node name="name" type="Label" parent="VBoxContainer/top4/second/second_vbox" unique_id=1872719136]
+layout_mode = 2
+text = "Player"
+label_settings = SubResource("LabelSettings_juer2")
+horizontal_alignment = 1
+
+[node name="points_count" type="Label" parent="VBoxContainer/top4/second/second_vbox" unique_id=1004078412]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_77fnu")
+horizontal_alignment = 1
+
+[node name="pts_string" type="Label" parent="VBoxContainer/top4/second/second_vbox" unique_id=651842854]
+layout_mode = 2
+text = "pts"
+label_settings = SubResource("LabelSettings_vt7xt")
+horizontal_alignment = 1
+
+[node name="third" type="Panel" parent="VBoxContainer/top4" unique_id=1692263253]
+custom_minimum_size = Vector2(450, 130)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ycce")
+
+[node name="third_vbox" type="VBoxContainer" parent="VBoxContainer/top4/third" unique_id=1061215125]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="position" type="Label" parent="VBoxContainer/top4/third/third_vbox" unique_id=1393213312]
+layout_mode = 2
+text = "3rd"
+label_settings = SubResource("LabelSettings_hopkj")
+horizontal_alignment = 1
+
+[node name="avatar" type="Label" parent="VBoxContainer/top4/third/third_vbox" unique_id=42458840]
+layout_mode = 2
+text = "[avatar]"
+horizontal_alignment = 1
+
+[node name="name" type="Label" parent="VBoxContainer/top4/third/third_vbox" unique_id=354685959]
+layout_mode = 2
+text = "Player"
+label_settings = SubResource("LabelSettings_y32x3")
+horizontal_alignment = 1
+
+[node name="points_count" type="Label" parent="VBoxContainer/top4/third/third_vbox" unique_id=889125472]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_tqkmk")
+horizontal_alignment = 1
+
+[node name="pts_string" type="Label" parent="VBoxContainer/top4/third/third_vbox" unique_id=2054308465]
+layout_mode = 2
+text = "pts"
+label_settings = SubResource("LabelSettings_rivrk")
+horizontal_alignment = 1
+
+[node name="fourth" type="Panel" parent="VBoxContainer/top4" unique_id=2017639523]
+custom_minimum_size = Vector2(450, 130)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_nf8sg")
+
+[node name="fourth_vbox" type="VBoxContainer" parent="VBoxContainer/top4/fourth" unique_id=1629342008]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="position" type="Label" parent="VBoxContainer/top4/fourth/fourth_vbox" unique_id=1450165818]
+layout_mode = 2
+text = "4th"
+label_settings = SubResource("LabelSettings_fh6xx")
+horizontal_alignment = 1
+
+[node name="avatar" type="Label" parent="VBoxContainer/top4/fourth/fourth_vbox" unique_id=193712923]
+layout_mode = 2
+text = "[avatar]"
+label_settings = SubResource("LabelSettings_t5m74")
+horizontal_alignment = 1
+
+[node name="name" type="Label" parent="VBoxContainer/top4/fourth/fourth_vbox" unique_id=470647443]
+layout_mode = 2
+text = "Player"
+label_settings = SubResource("LabelSettings_kynmb")
+horizontal_alignment = 1
+
+[node name="points_count" type="Label" parent="VBoxContainer/top4/fourth/fourth_vbox" unique_id=1905043934]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_4r2sq")
+horizontal_alignment = 1
+
+[node name="pts_string" type="Label" parent="VBoxContainer/top4/fourth/fourth_vbox" unique_id=985241135]
+layout_mode = 2
+text = "pts"
+label_settings = SubResource("LabelSettings_2h0rg")
+horizontal_alignment = 1
+
+[node name="rest_list" type="VBoxContainer" parent="VBoxContainer" unique_id=1146748461]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="fifth" type="Panel" parent="VBoxContainer/rest_list" unique_id=1811610197]
+custom_minimum_size = Vector2(800, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_h3s83")
+
+[node name="fifth_hbox" type="HBoxContainer" parent="VBoxContainer/rest_list/fifth" unique_id=1789309840]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="position" type="Label" parent="VBoxContainer/rest_list/fifth/fifth_hbox" unique_id=1960812449]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+text = "5"
+label_settings = SubResource("LabelSettings_f5vho")
+
+[node name="avatar" type="Label" parent="VBoxContainer/rest_list/fifth/fifth_hbox" unique_id=612806537]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "[av]"
+
+[node name="name" type="Label" parent="VBoxContainer/rest_list/fifth/fifth_hbox" unique_id=2019091494]
+layout_mode = 2
+text = "{Player"
+
+[node name="points_count" type="Label" parent="VBoxContainer/rest_list/fifth/fifth_hbox" unique_id=798092984]
+layout_mode = 2
+text = "0 pts"
+
+[node name="sixth" type="Panel" parent="VBoxContainer/rest_list" unique_id=2094991661]
+custom_minimum_size = Vector2(800, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_vnti4")
+
+[node name="sixth_hbox" type="HBoxContainer" parent="VBoxContainer/rest_list/sixth" unique_id=622584150]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="position" type="Label" parent="VBoxContainer/rest_list/sixth/sixth_hbox" unique_id=955427332]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+text = "6"
+label_settings = SubResource("LabelSettings_c2lvt")
+
+[node name="avatar" type="Label" parent="VBoxContainer/rest_list/sixth/sixth_hbox" unique_id=1644316403]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "[av]"
+
+[node name="name" type="Label" parent="VBoxContainer/rest_list/sixth/sixth_hbox" unique_id=2137927588]
+layout_mode = 2
+text = "Player"
+
+[node name="points_count" type="Label" parent="VBoxContainer/rest_list/sixth/sixth_hbox" unique_id=826530427]
+layout_mode = 2
+text = "0 pts"
+
+[node name="next_question" type="Button" parent="VBoxContainer" unique_id=2049749714]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_8tj4x")
+text = "Next question"
+
+[connection signal="pressed" from="VBoxContainer/next_question" to="." method="_on_next_question_pressed"]
