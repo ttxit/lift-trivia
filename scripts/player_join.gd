@@ -3,8 +3,8 @@ extends Control
 var selected_avatar: String = ""
 
 func _on_join_pressed() -> void:
-	var room_code = $VBoxContainer/VBoxContainer/room_code/LineEdit.text.strip_edges()
-	var player_name = $VBoxContainer/VBoxContainer/player_name/LineEdit.text.strip_edges()
+	var room_code = $VBoxContainer/input_data/room_code/rc_input.text.strip_edges()
+	var player_name = $VBoxContainer/input_data/player_name/pn_input.text.strip_edges()
 
 	if room_code == "":
 		print("Please enter a room code")
