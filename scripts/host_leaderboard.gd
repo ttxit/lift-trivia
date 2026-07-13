@@ -67,7 +67,7 @@ func _populate_rest(sorted: Array) -> void:
 		pts_label.add_theme_font_size_override("font_size", 14)
 
 		# add all three labels into the row in order: rank, name, points
-		row.add_child(rank_label)
+		row.add_child(position_label)
 		row.add_child(name_label)
 		row.add_child(pts_label)
 
