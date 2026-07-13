@@ -1,8 +1,8 @@
 extends Control
 
 func _ready() -> void:
-	$VBoxContainer/AvatarDisplay.text = PlayerData.avatar
-	$VBoxContainer/NameDisplay.text = PlayerData.player_name
+	$VBoxContainer/avatar_display.text = PlayerData.avatar
+	$VBoxContainer/name_display.text = PlayerData.player_name
 
 	#for class implementation:
 	# check that current_player exists before trying to read from it

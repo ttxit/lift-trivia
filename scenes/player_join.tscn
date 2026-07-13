@@ -24,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bx80g")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1995714954]
+[node name="background" type="ColorRect" parent="." unique_id=1995714954]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,91 +42,91 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1205785261]
+[node name="title" type="Label" parent="VBoxContainer" unique_id=1205785261]
 layout_mode = 2
 text = "Join Game"
 label_settings = SubResource("LabelSettings_cnoii")
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=510245736]
+[node name="input_data" type="VBoxContainer" parent="VBoxContainer" unique_id=510245736]
 layout_mode = 2
 
-[node name="room_code" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=535174629]
+[node name="room_code" type="HBoxContainer" parent="VBoxContainer/input_data" unique_id=535174629]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/room_code" unique_id=498157716]
+[node name="Label" type="Label" parent="VBoxContainer/input_data/room_code" unique_id=498157716]
 layout_mode = 2
 text = "Room Code: "
 label_settings = SubResource("LabelSettings_bx80g")
 horizontal_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/room_code" unique_id=1121664204]
+[node name="rc_input" type="LineEdit" parent="VBoxContainer/input_data/room_code" unique_id=1121664204]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 placeholder_text = "Enter code..."
 alignment = 1
 
-[node name="player_name" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=942835344]
+[node name="player_name" type="HBoxContainer" parent="VBoxContainer/input_data" unique_id=942835344]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/player_name" unique_id=410764375]
+[node name="Label" type="Label" parent="VBoxContainer/input_data/player_name" unique_id=410764375]
 layout_mode = 2
 text = "Name: "
 label_settings = SubResource("LabelSettings_bqhge")
 horizontal_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/player_name" unique_id=1123223390]
+[node name="pn_input" type="LineEdit" parent="VBoxContainer/input_data/player_name" unique_id=1123223390]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 placeholder_text = "Enter your name..."
 alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=1871768033]
+[node name="avatar_selection" type="VBoxContainer" parent="VBoxContainer" unique_id=1871768033]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2" unique_id=485971266]
+[node name="Label" type="Label" parent="VBoxContainer/avatar_selection" unique_id=485971266]
 layout_mode = 2
 text = "Choose your avatar"
 label_settings = SubResource("LabelSettings_8fa8l")
 horizontal_alignment = 1
 
-[node name="Avatar List" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=1633911110]
+[node name="Avatar List" type="HBoxContainer" parent="VBoxContainer/avatar_selection" unique_id=1633911110]
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=1352664580]
+[node name="avatar1" type="Button" parent="VBoxContainer/avatar_selection/Avatar List" unique_id=1352664580]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = " 🦍"
 
-[node name="Button2" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=15181419]
+[node name="avatar2" type="Button" parent="VBoxContainer/avatar_selection/Avatar List" unique_id=15181419]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "🦄"
 
-[node name="Button3" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=2050226333]
+[node name="avatar3" type="Button" parent="VBoxContainer/avatar_selection/Avatar List" unique_id=2050226333]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "🐼"
 
-[node name="Button4" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=594089051]
+[node name="avatar4" type="Button" parent="VBoxContainer/avatar_selection/Avatar List" unique_id=594089051]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "🐻"
 
-[node name="Button5" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=671532557]
+[node name="avatar5" type="Button" parent="VBoxContainer/avatar_selection/Avatar List" unique_id=671532557]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "⛄"
 
-[node name="Join" type="Button" parent="VBoxContainer" unique_id=1855407038]
+[node name="join_button" type="Button" parent="VBoxContainer" unique_id=1855407038]
 custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -134,7 +134,7 @@ tooltip_text = "Join session"
 theme_override_font_sizes/font_size = 36
 text = "Join"
 
-[node name="Leave" type="Button" parent="VBoxContainer" unique_id=195468055]
+[node name="leave_button" type="Button" parent="VBoxContainer" unique_id=195468055]
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -143,10 +143,10 @@ theme_override_font_sizes/font_size = 30
 text = "Leave"
 script = ExtResource("1_bx80g")
 
-[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button" to="." method="_on_avatar_selected" binds= [" 🦍"]]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button2" to="." method="_on_avatar_selected" binds= ["🦄"]]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button3" to="." method="_on_avatar_selected" binds= ["🐼"]]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button4" to="." method="_on_avatar_selected" binds= ["🐻"]]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button5" to="." method="_on_avatar_selected" binds= ["⛄"]]
-[connection signal="pressed" from="VBoxContainer/Join" to="." method="_on_join_pressed"]
-[connection signal="pressed" from="VBoxContainer/Leave" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="VBoxContainer/avatar_selection/Avatar List/avatar1" to="." method="_on_avatar_selected" binds= [" 🦍"]]
+[connection signal="pressed" from="VBoxContainer/avatar_selection/Avatar List/avatar2" to="." method="_on_avatar_selected" binds= ["🦄"]]
+[connection signal="pressed" from="VBoxContainer/avatar_selection/Avatar List/avatar3" to="." method="_on_avatar_selected" binds= ["🐼"]]
+[connection signal="pressed" from="VBoxContainer/avatar_selection/Avatar List/avatar4" to="." method="_on_avatar_selected" binds= ["🐻"]]
+[connection signal="pressed" from="VBoxContainer/avatar_selection/Avatar List/avatar5" to="." method="_on_avatar_selected" binds= ["⛄"]]
+[connection signal="pressed" from="VBoxContainer/join_button" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="VBoxContainer/leave_button" to="." method="_on_leave_pressed"]
