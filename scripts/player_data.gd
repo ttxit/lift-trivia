@@ -21,7 +21,7 @@ class Player:
 		points += amount
 
 	# readable string summary of the player's current state	
-	func to_string() -> String:
+	func status_str() -> String:
 		return player_name + " (" + avatar + "): " + str(points) + " pts"
 
 # creates a new Player object and assigns it to current_player, called when player clicks "Join"
