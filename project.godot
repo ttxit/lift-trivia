@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SceneManager="*uid://dapen7o8pqu5f"
 PlayerData="*uid://br3idmw5kv7gy"
+QuestionManager="*uid://6un6b3usvpdr"
 
 [display]
 
