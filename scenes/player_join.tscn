@@ -61,7 +61,7 @@ text = "Room Code: "
 label_settings = SubResource("LabelSettings_bx80g")
 horizontal_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/input_data/room_code" unique_id=1121664204]
+[node name="rc_input" type="LineEdit" parent="VBoxContainer/input_data/room_code" unique_id=1121664204]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 placeholder_text = "Enter code..."
@@ -77,7 +77,7 @@ text = "Name: "
 label_settings = SubResource("LabelSettings_bqhge")
 horizontal_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/input_data/player_name" unique_id=1123223390]
+[node name="pn_input" type="LineEdit" parent="VBoxContainer/input_data/player_name" unique_id=1123223390]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 placeholder_text = "Enter your name..."

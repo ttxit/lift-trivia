@@ -65,4 +65,11 @@ tooltip_text = "Back to Main Menu"
 theme_override_font_sizes/font_size = 30
 text = "Leave"
 
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1139103705]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Join"
+
 [connection signal="pressed" from="VBoxContainer/leave" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_join_pressed"]

@@ -38,25 +38,14 @@ font_color = Color(0.058823, 0.203921, 0.37647, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2wlt"]
 bg_color = Color(0.905882, 0.298039, 0.235294, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_qirym"]
-font_size = 18
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quyqm"]
 bg_color = Color(0.30196, 0.588235, 1, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_swgos"]
-font_size = 18
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvhi0"]
 bg_color = Color(0.317647, 0.811764, 0.4, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_4kv0y"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qirym"]
 bg_color = Color(1, 0.662745, 0.30196, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_e6kso"]
-font_size = 18
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jehe"]
 bg_color = Color(1, 1, 1, 0.15)
@@ -157,76 +146,33 @@ theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 2
 
-[node name="a1_bubble" type="Button" parent="VBoxContainer/answer_grid" unique_id=2087606057]
+[node name="answer1" type="Button" parent="VBoxContainer/answer_grid" unique_id=2087606057]
 custom_minimum_size = Vector2(350, 110)
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_o2wlt")
+text = "Matthew"
 
-[node name="answer1" type="Label" parent="VBoxContainer/answer_grid/a1_bubble" unique_id=726560271]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Matthew
-"
-label_settings = SubResource("LabelSettings_qirym")
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="a2_bubble" type="Button" parent="VBoxContainer/answer_grid" unique_id=2022218199]
+[node name="answer2" type="Button" parent="VBoxContainer/answer_grid" unique_id=2022218199]
 custom_minimum_size = Vector2(350, 110)
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_quyqm")
+text = "Mark"
 
-[node name="answer2" type="Label" parent="VBoxContainer/answer_grid/a2_bubble" unique_id=1453755101]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Mark
-"
-label_settings = SubResource("LabelSettings_swgos")
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="a3_bubble" type="Button" parent="VBoxContainer/answer_grid" unique_id=1785241257]
+[node name="answer3" type="Button" parent="VBoxContainer/answer_grid" unique_id=1785241257]
 custom_minimum_size = Vector2(350, 110)
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_yvhi0")
-
-[node name="answer3" type="Label" parent="VBoxContainer/answer_grid/a3_bubble" unique_id=1628350975]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 text = "Luke"
-label_settings = SubResource("LabelSettings_4kv0y")
-horizontal_alignment = 1
-vertical_alignment = 2
 
-[node name="a4_bubble" type="Button" parent="VBoxContainer/answer_grid" unique_id=287227330]
+[node name="answer4" type="Button" parent="VBoxContainer/answer_grid" unique_id=287227330]
 custom_minimum_size = Vector2(350, 110)
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_qirym")
-
-[node name="answer4" type="Label" parent="VBoxContainer/answer_grid/a4_bubble" unique_id=1165622499]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "John
-"
-label_settings = SubResource("LabelSettings_e6kso")
-horizontal_alignment = 1
-vertical_alignment = 2
+text = "John"
 
 [node name="end_button" type="Button" parent="VBoxContainer" unique_id=1496863897]
 custom_minimum_size = Vector2(200, 50)
@@ -235,4 +181,11 @@ size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_5jehe")
 text = "End Game"
 
+[node name="leaderboard" type="Button" parent="VBoxContainer" unique_id=802426915]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Leaderboard"
+
 [connection signal="pressed" from="VBoxContainer/end_button" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="VBoxContainer/leaderboard" to="." method="_on_leaderboard_pressed"]

@@ -69,16 +69,34 @@ font_color = Color(0, 0, 0, 0.8)
 font_color = Color(0, 0, 0, 0.8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3s83"]
-bg_color = Color(0.8869322, 0.8673485, 0.8616555, 0.33400002)
+bg_color = Color(18.892157, 18.892157, 18.892157, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_f5vho"]
-font_color = Color(0.9297146, 0.9297147, 0.9297146, 1)
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5kbis"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ycce"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nf8sg"]
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnti4"]
-bg_color = Color(0.8869322, 0.8673485, 0.8616555, 0.33400002)
+bg_color = Color(18.892157, 18.892157, 18.892157, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_c2lvt"]
-font_color = Color(0.9297146, 0.9297147, 0.9297146, 1)
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h3s83"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vnti4"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8tj4x"]
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tj4x"]
 bg_color = Color(0.887035, 0.86716837, 0.86183965, 0.15200001)
@@ -322,15 +340,19 @@ label_settings = SubResource("LabelSettings_f5vho")
 [node name="avatar" type="Label" parent="VBoxContainer/rest_list/fifth/fifth_hbox" unique_id=612806537]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "[av]"
+label_settings = SubResource("LabelSettings_5kbis")
 
 [node name="name" type="Label" parent="VBoxContainer/rest_list/fifth/fifth_hbox" unique_id=2019091494]
 layout_mode = 2
-text = "{Player"
+text = "[Player]"
+label_settings = SubResource("LabelSettings_8ycce")
 
 [node name="points_count" type="Label" parent="VBoxContainer/rest_list/fifth/fifth_hbox" unique_id=798092984]
 layout_mode = 2
 text = "0 pts"
+label_settings = SubResource("LabelSettings_nf8sg")
 
 [node name="sixth" type="Panel" parent="VBoxContainer/rest_list" unique_id=2094991661]
 custom_minimum_size = Vector2(800, 50)
@@ -356,14 +378,17 @@ label_settings = SubResource("LabelSettings_c2lvt")
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 text = "[av]"
+label_settings = SubResource("LabelSettings_h3s83")
 
 [node name="name" type="Label" parent="VBoxContainer/rest_list/sixth/sixth_hbox" unique_id=2137927588]
 layout_mode = 2
 text = "Player"
+label_settings = SubResource("LabelSettings_vnti4")
 
 [node name="points_count" type="Label" parent="VBoxContainer/rest_list/sixth/sixth_hbox" unique_id=826530427]
 layout_mode = 2
 text = "0 pts"
+label_settings = SubResource("LabelSettings_8tj4x")
 
 [node name="next_question" type="Button" parent="VBoxContainer" unique_id=2049749714]
 custom_minimum_size = Vector2(200, 50)
