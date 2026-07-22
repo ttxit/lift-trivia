@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://drwf54riu8vkx"]
+
+[ext_resource type="Script" uid="uid://dru64ahhull6o" path="res://scripts/player_leaderboard.gd" id="1_4vfa1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nf8sg"]
+bg_color = Color(0.30196, 0.588235, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fh6xx"]
+font_size = 40
+font_color = Color(0, 0, 0, 0.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t5m74"]
+font_size = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_kynmb"]
+font_size = 37
+font_color = Color(0, 0, 0, 0.75)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4r2sq"]
+font_size = 32
+font_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2h0rg"]
+font_size = 30
+font_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tj4x"]
+bg_color = Color(0.887035, 0.86716837, 0.86183965, 0.15200001)
+
+[node name="PlayerLeaderboard" type="Control" unique_id=1433479937]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4vfa1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1593000290]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.058823, 0.203921, 0.37647, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=198165690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="space" type="Label" parent="VBoxContainer" unique_id=441285614]
+layout_mode = 2
+
+[node name="player_bg" type="Panel" parent="VBoxContainer" unique_id=2017639523]
+custom_minimum_size = Vector2(750, 400)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_nf8sg")
+
+[node name="player_vbox" type="VBoxContainer" parent="VBoxContainer/player_bg" unique_id=1629342008]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 27
+alignment = 1
+
+[node name="position" type="Label" parent="VBoxContainer/player_bg/player_vbox" unique_id=1450165818]
+layout_mode = 2
+text = "4th"
+label_settings = SubResource("LabelSettings_fh6xx")
+horizontal_alignment = 1
+
+[node name="avatar" type="Label" parent="VBoxContainer/player_bg/player_vbox" unique_id=193712923]
+layout_mode = 2
+text = "[avatar]"
+label_settings = SubResource("LabelSettings_t5m74")
+horizontal_alignment = 1
+
+[node name="name" type="Label" parent="VBoxContainer/player_bg/player_vbox" unique_id=470647443]
+layout_mode = 2
+text = "Player"
+label_settings = SubResource("LabelSettings_kynmb")
+horizontal_alignment = 1
+
+[node name="points_count" type="Label" parent="VBoxContainer/player_bg/player_vbox" unique_id=1905043934]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_4r2sq")
+horizontal_alignment = 1
+
+[node name="pts_string" type="Label" parent="VBoxContainer/player_bg/player_vbox" unique_id=985241135]
+layout_mode = 2
+text = "pts"
+label_settings = SubResource("LabelSettings_2h0rg")
+horizontal_alignment = 1
+
+[node name="leave" type="Button" parent="VBoxContainer" unique_id=2049749714]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_8tj4x")
+text = "Leave game"
+
+[connection signal="pressed" from="VBoxContainer/leave" to="." method="_on_leave_pressed"]
