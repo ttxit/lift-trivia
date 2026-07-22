@@ -5,7 +5,7 @@ extends Node
 const SAMPLE_FILE_PATH: String = "res://questions/sample_questions.json"
 
 
-func set_question_sequence(requested_count: int) -> void:
+func save_question_sequence(requested_count: int) -> void:
 	if requested_count < 1:
 		# This shouldn't be possible btw
 		# If it happens, there is a problem with the spinbox
