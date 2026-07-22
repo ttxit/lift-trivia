@@ -6,4 +6,4 @@ func _on_back_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
-	pass # Replace with function body.
+	SceneManager.change_view("res://scenes/host_question.tscn")
