@@ -56,20 +56,27 @@ offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Player Count" type="HBoxContainer" parent="VBoxContainer/Options/VBoxContainer" unique_id=2025548398]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Options/VBoxContainer" unique_id=741302677]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Options/VBoxContainer/Player Count" unique_id=434576118]
+[node name="Label" type="Label" parent="VBoxContainer/Options/VBoxContainer/HBoxContainer" unique_id=1375094305]
 layout_mode = 2
-size_flags_horizontal = 2
-text = "Room Size"
+text = "Category"
 
-[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Options/VBoxContainer/Player Count" unique_id=2063117187]
+[node name="Category" type="OptionButton" parent="VBoxContainer/Options/VBoxContainer/HBoxContainer" unique_id=358175748]
+custom_minimum_size = Vector2(85, 35)
 layout_mode = 2
 size_flags_horizontal = 10
-min_value = 1.0
-value = 1.0
-rounded = true
+fit_to_longest_item = false
+item_count = 4
+popup/item_0/text = "Bible"
+popup/item_0/id = 0
+popup/item_1/text = "Church Members"
+popup/item_1/id = 1
+popup/item_2/text = "Lift Lore"
+popup/item_2/id = 2
+popup/item_3/text = "Campus"
+popup/item_3/id = 3
 
 [node name="Question Count" type="HBoxContainer" parent="VBoxContainer/Options/VBoxContainer" unique_id=427178756]
 layout_mode = 2
@@ -84,6 +91,21 @@ layout_mode = 2
 size_flags_horizontal = 10
 min_value = 1.0
 max_value = 50.0
+value = 1.0
+rounded = true
+
+[node name="Player Count" type="HBoxContainer" parent="VBoxContainer/Options/VBoxContainer" unique_id=2025548398]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Options/VBoxContainer/Player Count" unique_id=434576118]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Room Size"
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Options/VBoxContainer/Player Count" unique_id=2063117187]
+layout_mode = 2
+size_flags_horizontal = 10
+min_value = 1.0
 value = 1.0
 rounded = true
 
