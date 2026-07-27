@@ -1,11 +1,36 @@
 extends Node
 
 
-## Temporary constant for sample file path (there will be one for each file in the future)
-const SAMPLE_FILE_PATH: String = "res://questions/sample_questions.json"
+class QuestionData:
+	## String for the question being asked
+	var question_string: String:
+		get:
+			return question_string
+
+	## Array of strings for options
+	var option_array: Array[String]:
+		get:
+			return option_array
+
+	## Index of correct answer in option_array
+	var correct_option_idx: int:
+		get:
+			return correct_option_idx
 
 
-func save_question_sequence(requested_count: int) -> void:
+	func _init(input_question: String, input_options: Array[String], correct_idx: int) -> void:
+		question_string = input_question
+		option_array = input_options
+		correct_option_idx = correct_idx
+
+
+## Dictionary for looking up file paths for question categories
+const FILE_PATH: Dictionary[String, String] = {
+	"sample_category": "res://questions/sample_questions.json"
+	}
+
+
+func save_question_sequence(requested_count: int, requested_category: String) -> void:
 	if requested_count < 1:
 		# This shouldn't be possible btw
 		# If it happens, there is a problem with the spinbox
@@ -15,11 +40,13 @@ func save_question_sequence(requested_count: int) -> void:
 	## Sequence of question indexes to be used during game
 	var question_idx_seq: Array[int]
 
-	if not FileAccess.file_exists(SAMPLE_FILE_PATH):
-		push_error("File does not exist: " + SAMPLE_FILE_PATH)
+	var category_path: String = FILE_PATH[requested_category]
+
+	if not FileAccess.file_exists(category_path):
+		push_error("File does not exist: " + category_path)
 		return
 		
-	var file: FileAccess = FileAccess.open(SAMPLE_FILE_PATH, FileAccess.READ)
+	var file: FileAccess = FileAccess.open(category_path, FileAccess.READ)
 	var json_string: String = file.get_as_text()
 	file.close()
 
@@ -37,6 +64,7 @@ func save_question_sequence(requested_count: int) -> void:
 
 	## Dictionary format for the question_sequence file
 	var qs_format: Dictionary = {
+		"category": requested_category,
 		"question_sequence": question_idx_seq,
 		"current_question": 0
 	}
@@ -52,4 +80,44 @@ func save_question_sequence(requested_count: int) -> void:
 
 	qs_file.close()
 
-	return
+
+func get_next_question() -> QuestionData:
+	## Question Sequence file pointer
+	var qs_file: FileAccess = FileAccess.open("user://game_data/question_sequence.json", FileAccess.READ_WRITE)
+
+	var qs_data: Dictionary = JSON.parse_string(qs_file.get_as_text())
+
+	var sequence: Array[int] = qs_data["question_sequence"]
+	var current_question_in_seq: int = qs_data["current_question_in_seq"]
+
+	# Question sequence completed and game is over (check for null on receiving end)
+	if current_question_in_seq >= sequence.size():
+		return null
+
+	# Update current question to next
+	current_question_in_seq += 1
+	qs_data["current_question_in_seq"] = current_question_in_seq
+
+	# Store new data to qs_file
+	qs_file.store_line(JSON.stringify(qs_data, "\t"))
+	qs_file.close()
+
+
+	var qp_file_path: String = FILE_PATH[qs_data["category"]]
+
+	## Question Pool file pointer
+	var qp_file: FileAccess = FileAccess.open(qp_file_path, FileAccess.READ)
+	var qp_data = JSON.parse_string(qp_file.get_as_text())
+
+	qp_file.close()
+
+	var current_question_idx: int = sequence[current_question_in_seq]
+
+	var question_data_dict: Dictionary = qp_data["questions"][current_question_idx]
+	var question_string: String = question_data_dict["question"]
+	var option_array: Array[String] = question_data_dict["options"]
+	var correct_option_idx: int = question_data_dict["correct_answer_index"]
+
+	var question_data: QuestionData = QuestionData.new(question_string, option_array, correct_option_idx)
+
+	return question_data
