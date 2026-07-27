@@ -8,7 +8,7 @@ class QuestionData:
 			return question_string
 
 	## Array of strings for options
-	var option_array: Array[String]:
+	var option_array: Array:
 		get:
 			return option_array
 
@@ -18,7 +18,7 @@ class QuestionData:
 			return correct_option_idx
 
 
-	func _init(input_question: String, input_options: Array[String], correct_idx: int) -> void:
+	func _init(input_question: String, input_options: Array, correct_idx: int) -> void:
 		question_string = input_question
 		option_array = input_options
 		correct_option_idx = correct_idx
@@ -55,18 +55,23 @@ func save_question_sequence(requested_count: int, requested_category: String) ->
 
 	var data: Dictionary = json.data
 
-	requested_count = min(requested_count, data.get("total_questions"))
+	requested_count = min(requested_count, data["total_questions"])
+
+	var temp_sequence: Array[int]
+
+	for i in range(data["total_questions"]):
+		temp_sequence.append(i)
+
+	temp_sequence.shuffle() # Order is randomized here
 
 	for i in range(requested_count):
-		question_idx_seq.append(i)
-
-	question_idx_seq.shuffle() # Order is randomized here
+		question_idx_seq.append(temp_sequence[i])
 
 	## Dictionary format for the question_sequence file
 	var qs_format: Dictionary = {
 		"category": requested_category,
 		"question_sequence": question_idx_seq,
-		"current_question": 0
+		"current_question": -1
 	}
 
 	var dir: DirAccess = DirAccess.open("user://")
@@ -87,16 +92,16 @@ func get_next_question() -> QuestionData:
 
 	var qs_data: Dictionary = JSON.parse_string(qs_file.get_as_text())
 
-	var sequence: Array[int] = qs_data["question_sequence"]
-	var current_question_in_seq: int = qs_data["current_question_in_seq"]
+	var sequence: Array = qs_data["question_sequence"]
+	var current_question_in_seq: int = qs_data["current_question"]
+	current_question_in_seq += 1
 
 	# Question sequence completed and game is over (check for null on receiving end)
 	if current_question_in_seq >= sequence.size():
 		return null
 
 	# Update current question to next
-	current_question_in_seq += 1
-	qs_data["current_question_in_seq"] = current_question_in_seq
+	qs_data["current_question"] = current_question_in_seq
 
 	# Store new data to qs_file
 	qs_file.store_line(JSON.stringify(qs_data, "\t"))
@@ -115,7 +120,7 @@ func get_next_question() -> QuestionData:
 
 	var question_data_dict: Dictionary = qp_data["questions"][current_question_idx]
 	var question_string: String = question_data_dict["question"]
-	var option_array: Array[String] = question_data_dict["options"]
+	var option_array: Array = question_data_dict["options"]
 	var correct_option_idx: int = question_data_dict["correct_answer_index"]
 
 	var question_data: QuestionData = QuestionData.new(question_string, option_array, correct_option_idx)
