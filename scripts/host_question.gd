@@ -13,3 +13,6 @@ func _on_end_pressed() -> void:
 
 func _on_leaderboard_pressed() -> void:
 	SceneManager.change_view("res://scenes/host_leaderboard.tscn")
+
+func _on_next_question_pressed() -> void:
+	pass # Replace with function body.
