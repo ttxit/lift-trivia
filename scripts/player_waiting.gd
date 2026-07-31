@@ -1,8 +1,9 @@
 extends Control
 
+@onready var name_display: Label = $VBoxContainer/name_display
+@onready var avatar_display: TextureRect = $VBoxContainer/avatar_display
+
 func _ready() -> void:
-	#$VBoxContainer/avatar.text = PlayerData.avatar
-	#$VBoxContainer/name.text = PlayerData.player_name
 
 	# check that current_player exists before trying to read from it
 	# avoid crash if the scene is opened without going through player join

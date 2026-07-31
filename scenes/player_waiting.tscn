@@ -41,41 +41,36 @@ custom_minimum_size = Vector2(350, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Waiting for Host..."
-label_settings = SubResource("LabelSettings_rkp06")
-horizontal_alignment = 1
-
-[node name="avatar" type="Label" parent="VBoxContainer" unique_id=644558735]
-layout_mode = 2
-text = "[Avatar]"
 label_settings = SubResource("LabelSettings_0py0l")
 horizontal_alignment = 1
 
-[node name="name" type="Label" parent="VBoxContainer" unique_id=194562140]
+[node name="avatar_display" type="TextureRect" parent="VBoxContainer" unique_id=833886697]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 3
+stretch_mode = 5
+
+[node name="name_display" type="Label" parent="VBoxContainer" unique_id=194562140]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "[NAME]"
 label_settings = SubResource("LabelSettings_uxch6")
 horizontal_alignment = 1
 
-[node name="leave" type="Button" parent="VBoxContainer" unique_id=252709774]
+[node name="leave_button" type="Button" parent="VBoxContainer" unique_id=252709774]
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_horizontal = 4
-expand_mode = 3
-stretch_mode = 5
-
-[node name="leave_button" type="Button" parent="VBoxContainer" unique_id=489623523]
-custom_minimum_size = Vector2(150, 45)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 37
+theme_override_font_sizes/font_size = 28
 text = "Leave"
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1139103705]
+[node name="join_button" type="Button" parent="VBoxContainer" unique_id=1139103705]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
 text = "Join"
 
-[connection signal="pressed" from="VBoxContainer/leave" to="." method="_on_leave_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="VBoxContainer/leave_button" to="." method="_on_leave_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/join_button" to="." method="_on_join_button_pressed"]

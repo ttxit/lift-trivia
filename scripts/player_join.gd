@@ -16,7 +16,7 @@ func _on_name_changed(new_text: String) -> void:
 		# clear preview if name is empty
 		avatar_preview.texture = null
 
-func _on_join_pressed() -> void:
+func _on_join_button_pressed() -> void:
 	var room_code = room_code_line_edit.text.strip_edges()
 	var player_name = name_line_edit.text.strip_edges()
 
@@ -31,11 +31,11 @@ func _on_join_pressed() -> void:
 #		return
 
 	PlayerData.room_code = room_code
-	PlayerData.create_player(player_name, selected_avatar)
+	PlayerData.create_player(player_name)
 
 	SceneManager.change_view("res://scenes/player_waiting.tscn")
 
-func _on_leave_pressed() -> void:
+func _on_leave_button_pressed() -> void:
 	# clear the player data
 	PlayerData.current_player = null
 	PlayerData.room_code = ""
