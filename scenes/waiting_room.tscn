@@ -17,21 +17,6 @@ corner_radius_bottom_left = 12
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_deiel"]
-font_size = 30
-
-[sub_resource type="LabelSettings" id="LabelSettings_0koa6"]
-font_size = 30
-
-[sub_resource type="LabelSettings" id="LabelSettings_5sofm"]
-font_size = 30
-
-[sub_resource type="LabelSettings" id="LabelSettings_1jhay"]
-font_size = 30
-
-[sub_resource type="LabelSettings" id="LabelSettings_ksb6f"]
-font_size = 30
-
 [node name="WaitingRoom" type="Control" unique_id=367134892]
 layout_mode = 3
 anchors_preset = 15
@@ -71,7 +56,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Back" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=2140677668]
+[node name="back_button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=2140677668]
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -79,14 +64,14 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Back"
 
-[node name="QR Code Box" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1141391486]
+[node name="qr_code_box" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=1141391486]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_jmves")
 
-[node name="temp label" type="Label" parent="VBoxContainer/HBoxContainer/QR Code Box" unique_id=288910783]
+[node name="temp label" type="Label" parent="VBoxContainer/HBoxContainer/qr_code_box" unique_id=288910783]
 layout_mode = 0
 offset_left = -51.0
 offset_top = 85.0
@@ -96,7 +81,7 @@ text = "[QR CODE]"
 label_settings = SubResource("LabelSettings_1r6sg")
 horizontal_alignment = 1
 
-[node name="Start" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1492329230]
+[node name="start_button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1492329230]
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -104,13 +89,13 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = "Start"
 
-[node name="Player Box" type="Panel" parent="VBoxContainer" unique_id=1115863138]
+[node name="player_box" type="Panel" parent="VBoxContainer" unique_id=1115863138]
 custom_minimum_size = Vector2(1000, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Player Box" unique_id=1588497957]
+[node name="player_row" type="HBoxContainer" parent="VBoxContainer/player_box" unique_id=1588497957]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -122,40 +107,5 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Player 1" type="Label" parent="VBoxContainer/Player Box/HBoxContainer" unique_id=811673354]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "🦍 P1"
-label_settings = SubResource("LabelSettings_deiel")
-horizontal_alignment = 1
-
-[node name="Player 2" type="Label" parent="VBoxContainer/Player Box/HBoxContainer" unique_id=261402940]
-layout_mode = 2
-size_flags_horizontal = 3
-text = " 🦄 P2"
-label_settings = SubResource("LabelSettings_0koa6")
-horizontal_alignment = 1
-
-[node name="Player 3" type="Label" parent="VBoxContainer/Player Box/HBoxContainer" unique_id=217236126]
-layout_mode = 2
-size_flags_horizontal = 3
-text = " 🐼 P3"
-label_settings = SubResource("LabelSettings_5sofm")
-horizontal_alignment = 1
-
-[node name="Player 4" type="Label" parent="VBoxContainer/Player Box/HBoxContainer" unique_id=2118720682]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "🐻 P4"
-label_settings = SubResource("LabelSettings_1jhay")
-horizontal_alignment = 1
-
-[node name="Player 5" type="Label" parent="VBoxContainer/Player Box/HBoxContainer" unique_id=40717126]
-layout_mode = 2
-size_flags_horizontal = 3
-text = " ⛄P5"
-label_settings = SubResource("LabelSettings_ksb6f")
-horizontal_alignment = 1
-
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/back_button" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/start_button" to="." method="_on_start_pressed"]

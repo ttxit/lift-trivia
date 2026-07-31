@@ -83,50 +83,24 @@ layout_mode = 2
 placeholder_text = "Enter your name..."
 alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=1871768033]
+[node name="avatar_vbox" type="VBoxContainer" parent="VBoxContainer" unique_id=1871768033]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2" unique_id=485971266]
+[node name="Label" type="Label" parent="VBoxContainer/avatar_vbox" unique_id=485971266]
 layout_mode = 2
-text = "Choose your avatar"
+text = "Your avatar:"
 label_settings = SubResource("LabelSettings_8fa8l")
 horizontal_alignment = 1
 
-[node name="Avatar List" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=1633911110]
+[node name="avatar_preview" type="TextureRect" parent="VBoxContainer/avatar_vbox" unique_id=682191911]
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
-alignment = 1
+size_flags_horizontal = 4
+size_flags_vertical = 3
+expand_mode = 3
+stretch_mode = 5
 
-[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=1352664580]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = " 🦍"
-
-[node name="Button2" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=15181419]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "🦄"
-
-[node name="Button3" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=2050226333]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "🐼"
-
-[node name="Button4" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=594089051]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "🐻"
-
-[node name="Button5" type="Button" parent="VBoxContainer/VBoxContainer2/Avatar List" unique_id=671532557]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "⛄"
-
-[node name="Join" type="Button" parent="VBoxContainer" unique_id=1855407038]
+[node name="join_button" type="Button" parent="VBoxContainer" unique_id=1855407038]
 custom_minimum_size = Vector2(200, 70)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -134,7 +108,7 @@ tooltip_text = "Join session"
 theme_override_font_sizes/font_size = 36
 text = "Join"
 
-[node name="Leave" type="Button" parent="VBoxContainer" unique_id=195468055]
+[node name="leave_button" type="Button" parent="VBoxContainer" unique_id=195468055]
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -143,10 +117,5 @@ theme_override_font_sizes/font_size = 30
 text = "Leave"
 script = ExtResource("1_bx80g")
 
-[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button" to="." method="_on_avatar_selected" binds= [" 🦍"]]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button2" to="." method="_on_avatar_selected" binds= ["🦄"]]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button3" to="." method="_on_avatar_selected" binds= ["🐼"]]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button4" to="." method="_on_avatar_selected" binds= ["🐻"]]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Avatar List/Button5" to="." method="_on_avatar_selected" binds= ["⛄"]]
-[connection signal="pressed" from="VBoxContainer/Join" to="." method="_on_join_pressed"]
-[connection signal="pressed" from="VBoxContainer/Leave" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="VBoxContainer/join_button" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="VBoxContainer/leave_button" to="." method="_on_leave_pressed"]
