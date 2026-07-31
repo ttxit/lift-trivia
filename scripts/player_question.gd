@@ -1,7 +1,9 @@
 extends Control
 
+@onready var avatar_display: TextureRect = $VBoxContainer/top_row/avatar/avatar_display
+
 func _ready() -> void:
-	$VBoxContainer/top_row/avatar_display/avatar.text = PlayerData.current_player.avatar
+	avatar_display.texture = AvatarLoader.get_avatar_for_name(PlayerData.current_player.player_name)
 	# LOAD QUESTION AND ANSWERS FROM FILE TO OVERWRITE PLACEHOLDER TEXT ON SCENE
 
 # functions to select answer and send to host for validation

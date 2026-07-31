@@ -15,13 +15,10 @@ font_color = Color(0.058823, 0.203921, 0.37647, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kv0y"]
 bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 35
-corner_radius_top_right = 35
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 35
-
-[sub_resource type="LabelSettings" id="LabelSettings_kw382"]
-font_size = 30
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6kso"]
 bg_color = Color(1, 1, 1, 1)
@@ -74,7 +71,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 20
 
 [node name="top_row" type="HBoxContainer" parent="VBoxContainer" unique_id=1350985766]
 layout_mode = 2
@@ -100,22 +97,21 @@ label_settings = SubResource("LabelSettings_qdd2x")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="avatar_display" type="Panel" parent="VBoxContainer/top_row" unique_id=1500830021]
+[node name="avatar" type="Panel" parent="VBoxContainer/top_row" unique_id=1500830021]
 custom_minimum_size = Vector2(140, 70)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4kv0y")
 
-[node name="avatar" type="Label" parent="VBoxContainer/top_row/avatar_display" unique_id=1399538946]
+[node name="avatar_display" type="TextureRect" parent="VBoxContainer/top_row/avatar" unique_id=394993548]
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "[Avatar]"
-label_settings = SubResource("LabelSettings_kw382")
-horizontal_alignment = 1
-vertical_alignment = 1
+expand_mode = 3
+stretch_mode = 5
 
 [node name="question_bubble" type="Panel" parent="VBoxContainer" unique_id=817087547]
 custom_minimum_size = Vector2(900, 160)

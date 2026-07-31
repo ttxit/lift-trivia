@@ -11,15 +11,15 @@ func _ready() -> void:
 		return
 
 	# display the player's avatar and name
-	$VBoxContainer/avatar.text = PlayerData.current_player.avatar
-	$VBoxContainer/name.text = PlayerData.current_player.player_name
+	name_display.text =  PlayerData.current_player.player_name
+	avatar_display.texture = AvatarLoader.get_avatar_for_name(PlayerData.current_player.player_name)
 
-func _on_leave_pressed() -> void:
+func _on_leave_button_pressed() -> void:
 	# clear the player data
 	PlayerData.current_player = null
 	PlayerData.room_code = ""
 
 	SceneManager.change_view("res://scenes/main_menu.tscn")
 
-func _on_join_pressed() -> void:
+func _on_join_button_pressed() -> void:
 	SceneManager.change_view("res://scenes/player_question.tscn")
