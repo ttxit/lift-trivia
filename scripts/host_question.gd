@@ -14,13 +14,16 @@ var current_question: QuestionManager.QuestionData
 
 
 func _ready() -> void:
-	current_question = QuestionManager.get_next_question()
+	var temp_question := QuestionManager.get_next_question()
 
-	question_node.text = current_question.question_string
-	answer_1_node.text = current_question.option_array[0]
-	answer_2_node.text = current_question.option_array[1]
-	answer_3_node.text = current_question.option_array[2]
-	answer_4_node.text = current_question.option_array[3]
+	if not temp_question:
+		current_question = QuestionManager.get_current_question()
+		_set_question_ui_elements(current_question)
+		return
+
+	current_question = temp_question
+
+	_set_question_ui_elements(current_question)
 
 	# load question and answers from file to overwrite placeholder text on scene
 
@@ -33,14 +36,23 @@ func _on_leaderboard_pressed() -> void:
 	SceneManager.change_view("res://scenes/host_leaderboard.tscn")
 
 func _on_next_question_pressed() -> void:
-	current_question = QuestionManager.get_next_question()
+	var temp_question := QuestionManager.get_next_question()
 
-	if current_question == null:
+	if not temp_question:
 		print("No more questions. Game Over!")
 		return
 
-	question_node.text = current_question.question_string
-	answer_1_node.text = current_question.option_array[0]
-	answer_2_node.text = current_question.option_array[1]
-	answer_3_node.text = current_question.option_array[2]
-	answer_4_node.text = current_question.option_array[3]
+	current_question = temp_question
+
+	_set_question_ui_elements(current_question)
+
+func _set_question_ui_elements(question_data) -> void:
+	if not question_data:
+		push_error("Question data null.")
+		return
+
+	question_node.text = question_data.question_string
+	answer_1_node.text = question_data.option_array[0]
+	answer_2_node.text = question_data.option_array[1]
+	answer_3_node.text = question_data.option_array[2]
+	answer_4_node.text = question_data.option_array[3]

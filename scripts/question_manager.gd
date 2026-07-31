@@ -29,6 +29,8 @@ const FILE_PATH: Dictionary[String, String] = {
 	"sample_category": "res://questions/sample_questions.json"
 	}
 
+var current_question: QuestionData
+
 
 func save_question_sequence(requested_count: int, requested_category: String) -> void:
 	if requested_count < 1:
@@ -124,5 +126,9 @@ func get_next_question() -> QuestionData:
 	var correct_option_idx: int = question_data_dict["correct_answer_index"]
 
 	var question_data: QuestionData = QuestionData.new(question_string, option_array, correct_option_idx)
+	current_question = question_data
 
 	return question_data
+
+func get_current_question() -> QuestionData:
+	return current_question
