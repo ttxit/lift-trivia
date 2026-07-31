@@ -36,7 +36,7 @@ font_size = 26
 font_color = Color(0.058823, 0.203921, 0.37647, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2wlt"]
-bg_color = Color(0.905882, 0.298039, 0.235294, 1)
+bg_color = Color(0.90588236, 0.29803923, 0.23529412, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quyqm"]
 bg_color = Color(0.30196, 0.588235, 1, 1)
@@ -79,6 +79,7 @@ theme_override_constants/separation = 25
 
 [node name="top_row" type="HBoxContainer" parent="VBoxContainer" unique_id=1350985766]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 850
 alignment = 1
 
@@ -104,6 +105,7 @@ vertical_alignment = 1
 [node name="timer_bubble" type="Panel" parent="VBoxContainer/top_row" unique_id=1500830021]
 custom_minimum_size = Vector2(140, 70)
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_4kv0y")
 
 [node name="Label" type="Label" parent="VBoxContainer/top_row/timer_bubble" unique_id=188971102]
@@ -119,9 +121,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="question_bubble" type="Panel" parent="VBoxContainer" unique_id=817087547]
-custom_minimum_size = Vector2(900, 160)
+custom_minimum_size = Vector2(900, 150)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_e6kso")
 
 [node name="question" type="Label" parent="VBoxContainer/question_bubble" unique_id=1315350484]
@@ -141,7 +144,7 @@ autowrap_mode = 2
 custom_minimum_size = Vector2(80, 20)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
 theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 2

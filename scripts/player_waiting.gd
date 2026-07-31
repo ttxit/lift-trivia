@@ -1,9 +1,9 @@
 extends Control
 
-@onready var avatar_display: TextureRect =  $VBoxContainer/avatar_display
-@onready var name_display: Label = $VBoxContainer/name_display
-
 func _ready() -> void:
+	#$VBoxContainer/avatar.text = PlayerData.avatar
+	#$VBoxContainer/name.text = PlayerData.player_name
+
 	# check that current_player exists before trying to read from it
 	# avoid crash if the scene is opened without going through player join
 	if PlayerData.current_player == null:
@@ -11,8 +11,8 @@ func _ready() -> void:
 		return
 
 	# display the player's avatar and name
-	name_display.text =  PlayerData.current_player.name
-	avatar_display.texture = AvatarLoader.get_avatar_for_name(PlayerData.current_player.player_name)
+	$VBoxContainer/avatar.text = PlayerData.current_player.avatar
+	$VBoxContainer/name.text = PlayerData.current_player.player_name
 
 func _on_leave_pressed() -> void:
 	# clear the player data

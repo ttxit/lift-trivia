@@ -31,7 +31,7 @@ func _on_join_pressed() -> void:
 #		return
 
 	PlayerData.room_code = room_code
-	PlayerData.create_player(player_name)
+	PlayerData.create_player(player_name, selected_avatar)
 
 	SceneManager.change_view("res://scenes/player_waiting.tscn")
 
