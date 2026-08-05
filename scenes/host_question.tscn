@@ -38,14 +38,17 @@ font_color = Color(0.058823, 0.203921, 0.37647, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2wlt"]
 bg_color = Color(0.90588236, 0.29803923, 0.23529412, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_4kv0y"]
+font_size = 20
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quyqm"]
-bg_color = Color(0.30196, 0.588235, 1, 1)
+bg_color = Color(0.3019608, 0.5882353, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvhi0"]
-bg_color = Color(0.317647, 0.811764, 0.4, 1)
+bg_color = Color(0.31764707, 0.8117647, 0.4, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qirym"]
-bg_color = Color(1, 0.662745, 0.30196, 1)
+bg_color = Color(1, 0.6627451, 0.3019608, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jehe"]
 bg_color = Color(1, 1, 1, 0.15)
@@ -149,33 +152,89 @@ theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 2
 
-[node name="answer1" type="Button" parent="VBoxContainer/answer_grid" unique_id=2087606057]
+[node name="answer_1_panel" type="Panel" parent="VBoxContainer/answer_grid" unique_id=1953584117]
 custom_minimum_size = Vector2(350, 110)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_o2wlt")
+theme_override_styles/panel = SubResource("StyleBoxFlat_o2wlt")
+
+[node name="Label" type="Label" parent="VBoxContainer/answer_grid/answer_1_panel" unique_id=639357726]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -11.5
+offset_right = 35.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Matthew"
+label_settings = SubResource("LabelSettings_4kv0y")
 
-[node name="answer2" type="Button" parent="VBoxContainer/answer_grid" unique_id=2022218199]
+[node name="answer_2_panel" type="Panel" parent="VBoxContainer/answer_grid" unique_id=1571452637]
 custom_minimum_size = Vector2(350, 110)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_quyqm")
+theme_override_styles/panel = SubResource("StyleBoxFlat_quyqm")
+
+[node name="Label" type="Label" parent="VBoxContainer/answer_grid/answer_2_panel" unique_id=1143673727]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -11.5
+offset_right = 35.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Mark"
+label_settings = SubResource("LabelSettings_4kv0y")
 
-[node name="answer3" type="Button" parent="VBoxContainer/answer_grid" unique_id=1785241257]
+[node name="answer_3_panel" type="Panel" parent="VBoxContainer/answer_grid" unique_id=1727896779]
 custom_minimum_size = Vector2(350, 110)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_yvhi0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_yvhi0")
+
+[node name="Label" type="Label" parent="VBoxContainer/answer_grid/answer_3_panel" unique_id=1447226783]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -11.5
+offset_right = 35.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Luke"
+label_settings = SubResource("LabelSettings_4kv0y")
 
-[node name="answer4" type="Button" parent="VBoxContainer/answer_grid" unique_id=287227330]
+[node name="answer_4_panel" type="Panel" parent="VBoxContainer/answer_grid" unique_id=677447018]
 custom_minimum_size = Vector2(350, 110)
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_qirym")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qirym")
+
+[node name="Label" type="Label" parent="VBoxContainer/answer_grid/answer_4_panel" unique_id=2022699374]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -11.5
+offset_right = 35.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "John"
+label_settings = SubResource("LabelSettings_4kv0y")
 
 [node name="end_button" type="Button" parent="VBoxContainer" unique_id=1496863897]
 custom_minimum_size = Vector2(200, 50)
@@ -184,11 +243,25 @@ size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_5jehe")
 text = "End Game"
 
-[node name="leaderboard" type="Button" parent="VBoxContainer" unique_id=802426915]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1346939660]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="leaderboard" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=802426915]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "Leaderboard"
 
+[node name="next_question" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1608555287]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Next Question"
+
 [connection signal="pressed" from="VBoxContainer/end_button" to="." method="_on_end_pressed"]
-[connection signal="pressed" from="VBoxContainer/leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/next_question" to="." method="_on_next_question_pressed"]
