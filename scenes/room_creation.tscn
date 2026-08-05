@@ -2,6 +2,15 @@
 
 [ext_resource type="Script" uid="uid://34c7jk5ceo57" path="res://scripts/room_creation.gd" id="1_y6yt4"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_rv7vc"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_y6yt4"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_81u5a"]
+font_size = 20
+
 [node name="Room Creation" type="Control" unique_id=1650507712]
 layout_mode = 3
 anchors_preset = 15
@@ -28,7 +37,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Create" type="Button" parent="VBoxContainer" unique_id=283828285]
+[node name="create_button" type="Button" parent="VBoxContainer" unique_id=283828285]
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -36,13 +45,13 @@ size_flags_vertical = 6
 tooltip_text = "Go back to Main Menu"
 text = "Create"
 
-[node name="Options" type="Panel" parent="VBoxContainer" unique_id=1351887287]
+[node name="options" type="Panel" parent="VBoxContainer" unique_id=1351887287]
 custom_minimum_size = Vector2(300, 350)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Options" unique_id=1736218938]
+[node name="room_settings" type="VBoxContainer" parent="VBoxContainer/options" unique_id=1736218938]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,15 +65,37 @@ offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Options/VBoxContainer" unique_id=741302677]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/options/room_settings" unique_id=1179177800]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Options/VBoxContainer/HBoxContainer" unique_id=1375094305]
+[node name="Label" type="Label" parent="VBoxContainer/options/room_settings/HBoxContainer" unique_id=8582078]
 layout_mode = 2
 text = "Category"
+label_settings = SubResource("LabelSettings_rv7vc")
 
-[node name="Category" type="OptionButton" parent="VBoxContainer/Options/VBoxContainer/HBoxContainer" unique_id=358175748]
-custom_minimum_size = Vector2(85, 35)
+[node name="category" type="OptionButton" parent="VBoxContainer/options/room_settings/HBoxContainer" unique_id=305980531]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Bible"
+popup/item_0/id = 0
+popup/item_1/text = "Church Members"
+popup/item_1/id = 1
+popup/item_2/text = "Lift Lore"
+popup/item_2/id = 2
+popup/item_3/text = "Campus"
+popup/item_3/id = 3
+
+[node name="player_count" type="HBoxContainer" parent="VBoxContainer/options/room_settings" unique_id=2025548398]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/options/room_settings/player_count" unique_id=434576118]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Room Size"
+label_settings = SubResource("LabelSettings_y6yt4")
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/options/room_settings/player_count" unique_id=2063117187]
 layout_mode = 2
 size_flags_horizontal = 10
 fit_to_longest_item = false
@@ -78,15 +109,16 @@ popup/item_2/id = 2
 popup/item_3/text = "Campus"
 popup/item_3/id = 3
 
-[node name="Question Count" type="HBoxContainer" parent="VBoxContainer/Options/VBoxContainer" unique_id=427178756]
+[node name="questions_count" type="HBoxContainer" parent="VBoxContainer/options/room_settings" unique_id=427178756]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Options/VBoxContainer/Question Count" unique_id=1397793038]
+[node name="Label" type="Label" parent="VBoxContainer/options/room_settings/questions_count" unique_id=1397793038]
 layout_mode = 2
 size_flags_horizontal = 2
 text = "Questions"
+label_settings = SubResource("LabelSettings_81u5a")
 
-[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Options/VBoxContainer/Question Count" unique_id=515346141]
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/options/room_settings/questions_count" unique_id=515346141]
 layout_mode = 2
 size_flags_horizontal = 10
 min_value = 1.0
@@ -94,22 +126,7 @@ max_value = 50.0
 value = 1.0
 rounded = true
 
-[node name="Player Count" type="HBoxContainer" parent="VBoxContainer/Options/VBoxContainer" unique_id=2025548398]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/Options/VBoxContainer/Player Count" unique_id=434576118]
-layout_mode = 2
-size_flags_horizontal = 2
-text = "Room Size"
-
-[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Options/VBoxContainer/Player Count" unique_id=2063117187]
-layout_mode = 2
-size_flags_horizontal = 10
-min_value = 1.0
-value = 1.0
-rounded = true
-
-[node name="Back" type="Button" parent="VBoxContainer" unique_id=528350939]
+[node name="back_button" type="Button" parent="VBoxContainer" unique_id=528350939]
 custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -117,5 +134,5 @@ size_flags_vertical = 6
 tooltip_text = "Go back to Main Menu"
 text = "Back"
 
-[connection signal="pressed" from="VBoxContainer/Create" to="." method="_on_create_pressed"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/create_button" to="." method="_on_create_pressed"]
+[connection signal="pressed" from="VBoxContainer/back_button" to="." method="_on_back_pressed"]

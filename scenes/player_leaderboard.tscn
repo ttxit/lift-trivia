@@ -9,9 +9,6 @@ bg_color = Color(0.30196, 0.588235, 1, 1)
 font_size = 40
 font_color = Color(0, 0, 0, 0.5)
 
-[sub_resource type="LabelSettings" id="LabelSettings_t5m74"]
-font_size = 35
-
 [sub_resource type="LabelSettings" id="LabelSettings_kynmb"]
 font_size = 37
 font_color = Color(0, 0, 0, 0.75)
@@ -71,7 +68,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 27
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="position" type="Label" parent="VBoxContainer/player_bg/player_vbox" unique_id=1450165818]
@@ -80,11 +77,12 @@ text = "4th"
 label_settings = SubResource("LabelSettings_fh6xx")
 horizontal_alignment = 1
 
-[node name="avatar" type="Label" parent="VBoxContainer/player_bg/player_vbox" unique_id=193712923]
+[node name="avatar" type="TextureRect" parent="VBoxContainer/player_bg/player_vbox" unique_id=1216332715]
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
-text = "[avatar]"
-label_settings = SubResource("LabelSettings_t5m74")
-horizontal_alignment = 1
+size_flags_horizontal = 4
+expand_mode = 3
+stretch_mode = 5
 
 [node name="name" type="Label" parent="VBoxContainer/player_bg/player_vbox" unique_id=470647443]
 layout_mode = 2
@@ -104,11 +102,11 @@ text = "pts"
 label_settings = SubResource("LabelSettings_2h0rg")
 horizontal_alignment = 1
 
-[node name="leave" type="Button" parent="VBoxContainer" unique_id=2049749714]
+[node name="leave_button" type="Button" parent="VBoxContainer" unique_id=2049749714]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_8tj4x")
 text = "Leave game"
 
-[connection signal="pressed" from="VBoxContainer/leave" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="VBoxContainer/leave_button" to="." method="_on_leave_button_pressed"]
