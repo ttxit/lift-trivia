@@ -23,11 +23,10 @@ func _load_avatars(folder_path: String) -> void:
 			var texture = load(folder_path + file_name) as Texture2D
 			if texture:
 				avatar_textures.append(texture)	
+				print("Loaded " + str(avatar_textures.size()) + " avatars.")
 			else:
 				print("Failed to load avatar texture: " + file_name)
 		file_name = dir.get_next()
-
-		print("Loaded " + str(avatar_textures.size()) + " avatars.")
 
 # returns texture based on player name
 # same name always gets same avatar
