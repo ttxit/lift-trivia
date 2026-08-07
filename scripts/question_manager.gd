@@ -26,7 +26,10 @@ class QuestionData:
 
 ## Dictionary for looking up file paths for question categories
 const FILE_PATH: Dictionary[String, String] = {
-	"sample_category": "res://questions/sample_questions.json"
+	"sample_category": "res://questions/sample_questions.json",
+	"bible": "",
+	"church_members": "",
+	"campus": ""
 	}
 
 var current_question: QuestionData
