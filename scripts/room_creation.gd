@@ -19,6 +19,7 @@ func _on_back_pressed() -> void:
 func _on_create_pressed() -> void:
 	if category_selection.selected == -1:
 		print("Please select a category for questions")
+		return
 
 	var selected_string: String = CATEGORY_ARRAY[category_selection.selected]
 
