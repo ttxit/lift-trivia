@@ -98,16 +98,8 @@ label_settings = SubResource("LabelSettings_y6yt4")
 [node name="SpinBox" type="SpinBox" parent="VBoxContainer/options/room_settings/player_count" unique_id=2063117187]
 layout_mode = 2
 size_flags_horizontal = 10
-fit_to_longest_item = false
-item_count = 4
-popup/item_0/text = "Bible"
-popup/item_0/id = 0
-popup/item_1/text = "Church Members"
-popup/item_1/id = 1
-popup/item_2/text = "Lift Lore"
-popup/item_2/id = 2
-popup/item_3/text = "Campus"
-popup/item_3/id = 3
+min_value = 1.0
+value = 1.0
 
 [node name="questions_count" type="HBoxContainer" parent="VBoxContainer/options/room_settings" unique_id=427178756]
 layout_mode = 2
