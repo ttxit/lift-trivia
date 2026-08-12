@@ -46,6 +46,11 @@ bg_color = Color(1, 0.662745, 0.30196, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jehe"]
 bg_color = Color(1, 1, 1, 0.15)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gl7do"]
+bg_color = Color(0.06100855, 0.20285092, 0.3765157, 0.883)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qdd2x"]
+
 [node name="PlayerQuestion" type="Control" unique_id=625290634]
 layout_mode = 3
 anchors_preset = 15
@@ -181,6 +186,50 @@ custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Leaderboard"
+
+[node name="verdict_overlay" type="Panel" parent="." unique_id=2065770354]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gl7do")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="verdict_overlay" unique_id=1457083759]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+
+[node name="verdict_title" type="Label" parent="verdict_overlay/VBoxContainer" unique_id=1919657096]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+
+[node name="selected_answer_label" type="Label" parent="verdict_overlay/VBoxContainer" unique_id=1501016252]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Answer selected:"
+horizontal_alignment = 1
+
+[node name="correct_answer_label" type="Label" parent="verdict_overlay/VBoxContainer" unique_id=830247470]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Correct answer:"
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="verdict_overlay/VBoxContainer" unique_id=301830865]
+sprite_frames = SubResource("SpriteFrames_qdd2x")
+
+[node name="waiting label" type="Label" parent="verdict_overlay/VBoxContainer" unique_id=1089914872]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Waiting for next question..."
+horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/leave_button" to="." method="_on_leave_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_leaderboard_pressed"]

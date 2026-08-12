@@ -50,8 +50,14 @@ bg_color = Color(0.31764707, 0.8117647, 0.4, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qirym"]
 bg_color = Color(1, 0.6627451, 0.3019608, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evhcm"]
+bg_color = Color(1, 1, 1, 0.157)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jehe"]
 bg_color = Color(1, 1, 1, 0.15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74lvl"]
+bg_color = Color(0.06100855, 0.20285092, 0.3765157, 0.883)
 
 [node name="HostQuestion" type="Control" unique_id=625290634]
 layout_mode = 3
@@ -78,7 +84,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 17
 
 [node name="top_row" type="HBoxContainer" parent="VBoxContainer" unique_id=1350985766]
 layout_mode = 2
@@ -236,10 +242,19 @@ grow_vertical = 2
 text = "John"
 label_settings = SubResource("LabelSettings_4kv0y")
 
+[node name="reveal_button" type="Button" parent="VBoxContainer" unique_id=831397657]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_evhcm")
+text = "Reveal answer"
+
 [node name="end_button" type="Button" parent="VBoxContainer" unique_id=1496863897]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_5jehe")
 text = "End Game"
 
@@ -248,20 +263,61 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 
-[node name="leaderboard" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=802426915]
-custom_minimum_size = Vector2(150, 25)
+[node name="verdict_overlay" type="Panel" parent="." unique_id=1420411900]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_74lvl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="verdict_overlay" unique_id=288635735]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 150
+
+[node name="verdict_title" type="Label" parent="verdict_overlay/VBoxContainer" unique_id=666475922]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Time's Up!"
+horizontal_alignment = 1
+
+[node name="correct_answer_label" type="Label" parent="verdict_overlay/VBoxContainer" unique_id=1501078900]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Correct answer: "
+horizontal_alignment = 1
+
+[node name="verdict_buttons" type="HBoxContainer" parent="verdict_overlay/VBoxContainer" unique_id=1880482332]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="leaderboard" type="Button" parent="verdict_overlay/VBoxContainer/verdict_buttons" unique_id=802426915]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 20
 text = "Leaderboard"
 
-[node name="next_question" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1608555287]
-custom_minimum_size = Vector2(150, 25)
+[node name="next_question" type="Button" parent="verdict_overlay/VBoxContainer/verdict_buttons" unique_id=1608555287]
+custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 20
 text = "Next Question"
 
 [connection signal="pressed" from="VBoxContainer/end_button" to="." method="_on_end_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/leaderboard" to="." method="_on_leaderboard_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/next_question" to="." method="_on_next_question_pressed"]
+[connection signal="pressed" from="verdict_overlay/VBoxContainer/verdict_buttons/leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="verdict_overlay/VBoxContainer/verdict_buttons/next_question" to="." method="_on_next_question_pressed"]
