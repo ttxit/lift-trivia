@@ -14,5 +14,10 @@ export_credentials.cfg
 # Mono-specific ignores
 .mono/
 
-# MacOS config files
+# OS junk files
+.trash/
 .DS_Store
+Thumbs.db
+
+# Ignore Obsidian configuration folder
+.obsidian/
