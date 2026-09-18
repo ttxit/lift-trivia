@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"4eb99198f07b10d4","type":"group","x":-200,"y":100,"width":320,"height":310,"color":"1","label":"Start Here"},
+		{"id":"f9f18ee8830d41ae","type":"text","text":"# LIFT TRIVIA","x":-125,"y":-30,"width":171,"height":60,"color":"5"},
+		{"id":"d857b3ef78c78e7a","type":"text","text":"## Main Menu\n\nUser chooses between creating a room as a host and joining an already-existing room.","x":-139,"y":120,"width":200,"height":174},
+		{"id":"7f6d11446ef218b9","type":"text","text":"### Host","x":-179,"y":330,"width":80,"height":60,"color":"3"},
+		{"id":"3b68917f01457560","type":"text","text":"### Join","x":24,"y":330,"width":75,"height":60,"color":"3"},
+		{"id":"ed07b4aac0209133","type":"file","file":"Hosting.md","x":-475,"y":520,"width":376,"height":566}
+	],
+	"edges":[
+		{"id":"9487fdb2ccecb3d9","fromNode":"d857b3ef78c78e7a","fromSide":"left","toNode":"7f6d11446ef218b9","toSide":"top","toEnd":"none"},
+		{"id":"84e086be0586c015","fromNode":"d857b3ef78c78e7a","fromSide":"right","toNode":"3b68917f01457560","toSide":"top","toEnd":"none"},
+		{"id":"4a116b0bebdff6a0","fromNode":"7f6d11446ef218b9","fromSide":"left","toNode":"ed07b4aac0209133","toSide":"top"}
+	]
+}
