@@ -49,7 +49,8 @@ bg_color = Color(1, 1, 1, 0.15)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gl7do"]
 bg_color = Color(0.06100855, 0.20285092, 0.3765157, 0.883)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qdd2x"]
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_yyoc8"]
+file = "res://sprites/correct_sprites/correct1.ogv"
 
 [node name="PlayerQuestion" type="Control" unique_id=625290634]
 layout_mode = 3
@@ -188,7 +189,6 @@ size_flags_horizontal = 4
 text = "Leaderboard"
 
 [node name="verdict_overlay" type="Panel" parent="." unique_id=2065770354]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -204,7 +204,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 70
+theme_override_constants/separation = 30
 
 [node name="verdict_title" type="Label" parent="verdict_overlay/VBoxContainer" unique_id=1919657096]
 layout_mode = 2
@@ -223,8 +223,16 @@ theme_override_font_sizes/font_size = 30
 text = "Correct answer:"
 horizontal_alignment = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="verdict_overlay/VBoxContainer" unique_id=301830865]
-sprite_frames = SubResource("SpriteFrames_qdd2x")
+[node name="verdict" type="VideoStreamPlayer" parent="verdict_overlay/VBoxContainer" unique_id=1964792312]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = SubResource("VideoStreamTheora_yyoc8")
+volume_db = -80.0
+speed_scale = 1.48
+autoplay = true
+loop = true
 
 [node name="waiting label" type="Label" parent="verdict_overlay/VBoxContainer" unique_id=1089914872]
 layout_mode = 2
